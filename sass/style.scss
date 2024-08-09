@@ -1,12 +1,15 @@
+@use 'initial';
+@use 'variables';
+@use 'header';
 
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+.main-container{
+    width: 375px;
+    border: 1px solid purple;
+    margin: auto;
+    @media (min-width: 1115px){
+            width: 1115px;
+    }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
-body{
-    font-family: "Kumbh Sans", sans-serif;   
-    
-}
+
+

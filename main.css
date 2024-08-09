@@ -9,4 +9,19 @@ body {
   font-family: "Kumbh Sans", sans-serif;
 }
 
+.header {
+  border: 2px solid teal;
+}
+
+.main-container {
+  width: 375px;
+  border: 1px solid purple;
+  margin: auto;
+}
+@media (min-width: 1115px) {
+  .main-container {
+    width: 1115px;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
