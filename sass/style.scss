@@ -1,6 +1,8 @@
 @use 'initial';
 @use 'variables';
 @use 'header';
+@use 'navbar';
+@use 'modal-navbar';
 
 .main-container{
     width: 375px;

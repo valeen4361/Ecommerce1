@@ -1,3 +1,13 @@
+@use 'variables';
+
 .header{
-    border: 2px solid teal;
+    display: none;
+    display: flex; //toda la altura disponible
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    @media (min-width: 1115px){
+        height: 112px;
+        border-bottom: 2px solid gray; 
+    }
 }

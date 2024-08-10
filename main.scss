@@ -10,17 +10,8 @@ body {
 }
 
 .header {
-  display: none;
+  border: 2px solid yellow;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-}
-@media (min-width: 1115px) {
-  .header {
-    height: 112px;
-    border-bottom: 2px solid gray;
-  }
 }
 
 .navbar {
@@ -42,4 +33,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.scss.map */
