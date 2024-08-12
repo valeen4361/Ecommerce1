@@ -6,8 +6,72 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 24px;
+    //nesting
     @media (min-width: 1115px){
         height: 112px;
-        border-bottom: 2px solid gray; 
+        border-bottom: 2px solid gray ; 
+    }
+    //Se llama & comercial representa el punto (.) header
+    &__navigation{
+        width: 175px;
+        height: 100%;
+        border: 1px solid red;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (min-width: 1115px){
+            width: 590px;
+        }
+    }
+    &__menu{
+        &:hover{
+            cursor: pointer;
+        }
+        @media(min-width: 1115px){
+            display: none;
+        }
+    }
+    &__cart-avatar{
+        //border: 2px solid blue;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /*todo se modificara cuando mediaquery se cumpla*/
+        width: 70px;
+        @media (min-width: 1115px){
+            width: 125px;
+        }
+
+    }
+    //N° de productos de compra de carrito
+    &__cart{
+        position: relative;
+        &--notification{
+            display: none;
+            background-color: variables.$Orange;
+            width: 15px;
+            height: 12px;
+            border-radius: 16px;
+            position: absolute;
+            top: -2px;
+            right: -5px;
+            font-size: 0.6em;
+            text-align: center;
+            color: variables.$White;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__avatar{
+        width: 25px;
+        @media (min-width: 1115px){
+            width: 48px;
+        }
+        &:hover{
+            cursor: pointer;
+            border: 2px solid variables.$Orange;
+            border-radius: 50%;
+        }
     }
 }

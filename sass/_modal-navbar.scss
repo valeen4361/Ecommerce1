@@ -1,3 +1,9 @@
-.modal-navbar__background{
-    display: none;
+@use 'variables';
+
+.modal-navbar{
+    //& selector comercial
+    &__background{
+
+    }
+    //display: none;
 }
