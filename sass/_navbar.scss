@@ -1,3 +1,24 @@
+@use 'variables';
+
 .navbar{
     display: none;
+    width: 400px;
+    &__items{
+        list-style: none;
+        display: flex; //uno al lado del otro
+        justify-content: space-between;//espacio entre un link entre uno a otro
+    }
+    &__link{
+        text-decoration: none;
+        color: variables.$Dark-grayish-blue;
+        display: block; //antes de la altura para poder modificar ya que es un elemento a "de linea"
+        height: 115px;
+        padding-top: 42px;
+        &:hover{
+            border-bottom: 4px solid variables.$Orange;
+        }
+    }
+    @media (min-width:1115px){
+        display: block;
+    }
 }
