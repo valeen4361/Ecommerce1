@@ -5,6 +5,8 @@
 @use 'modal-navbar';
 @use 'mixins';
 @use 'gallery';
+@use 'details';
+@use 'input';
 
 .main-container{
     width: 375px;

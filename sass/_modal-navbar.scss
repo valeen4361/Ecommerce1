@@ -10,9 +10,8 @@
     height: 100%;
     width: 250px;
     padding: 28px 24px;
-    //display: none;
+    display: none;
     &__items{
-        //border: 1px solid red;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

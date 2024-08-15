@@ -118,6 +118,7 @@ body {
   height: 100%;
   width: 250px;
   padding: 28px 24px;
+  display: none;
 }
 .modal-navbar__background {
   background-color: hsla(0, 0%, 0%, 0.5);
@@ -126,6 +127,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
   display: none;
 }
 .modal-navbar__items {
@@ -190,6 +192,87 @@ body {
   .gallery__thumnail {
     display: block;
   }
+}
+
+.details {
+  border: 2px solid blueviolet;
+  padding: 24px;
+}
+.details__company {
+  color: hsl(26, 100%, 55%);
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.details__title {
+  font-size: 1.7em;
+  margin-bottom: 16px;
+}
+.details__description {
+  font-size: 0.94em;
+  color: hsl(219, 9%, 45%);
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+.details__prices {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  align-items: center;
+}
+.details__now {
+  font-size: 1.8em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.details__discount {
+  font-size: 0.5em;
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+  padding: 4px;
+  border-radius: 4px;
+}
+.details__before {
+  color: hsl(219, 9%, 45%);
+  text-decoration: line-through;
+}
+
+.input {
+  height: 57px;
+  display: flex;
+  justify-content: space-between;
+}
+.input__minus {
+  width: 25px;
+  height: 100%;
+  padding: 24px 5px;
+}
+.input__minus:hover {
+  cursor: pointer;
+}
+.input__number {
+  width: 100%;
+  border: none;
+  background-color: hsl(223, 64%, 98%);
+  font-size: 1.2em;
+  font-weight: 700;
+  font-family: "Kumbh Sans", sans-serif;
+  text-align: center;
+  outline: none;
+}
+.input__plus {
+  width: 25px;
+  height: 100%;
+  padding: 19px 3px;
+}
+.input__plus:hover {
+  cursor: pointer;
+}
+.input__button {
+  background-color: hsl(26, 100%, 55%);
 }
 
 .main-container {

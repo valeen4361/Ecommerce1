@@ -1,0 +1,48 @@
+@use 'variables' as v;
+@use 'mixins';
+
+.details{
+    border: 2px solid blueviolet;
+    padding: 24px;
+    &__company{
+        color: v.$Orange;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+    }
+    &__title{
+        font-size: 1.7em;
+        margin-bottom: 16px;
+    }
+    &__description{
+        font-size: 0.94em;
+        color: v.$Dark-grayish-blue;
+        line-height: 24px; //espacio entre linea y linea
+        margin-bottom: 24px;
+    }
+    &__prices{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        align-items: center;
+    }
+    &__now{
+        font-size: 1.8em;
+        font-weight: 700; //engrosa el texto (solid)
+        display: flex;
+        align-items: center;
+        gap: 18px;//Espacio entre "now" y "discount"
+    }
+    &__discount{
+        font-size: 0.5em;
+        background-color: v.$Pale-orange;
+        color: v.$Orange;
+        padding: 4px;
+        border-radius: 4px;
+    }
+    &__before{
+        color: v.$Dark-grayish-blue;
+        text-decoration: line-through;
+    }
+}
