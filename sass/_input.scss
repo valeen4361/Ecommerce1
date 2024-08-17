@@ -22,8 +22,6 @@
     &__plus{
        @include mixins.changenumber(19px , 3px);
     }
-    &__button{
-        @include mixins.button;
-    }
+   
    
 }
