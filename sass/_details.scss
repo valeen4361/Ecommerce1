@@ -2,7 +2,6 @@
 @use 'mixins';
 
 .details{
-    //border: 2px solid blueviolet;
     padding: 24px;
     &__company{
         color: v.$Orange;
@@ -27,6 +26,10 @@
         margin-bottom: 24px;
         align-items: center;
     }
+    &__product-quantity{
+        display: flex;
+        gap: 32px;
+    }
     &__now{
         font-size: 1.8em;
         font-weight: 700; //engrosa el texto (solid)
@@ -42,10 +45,27 @@
         border-radius: 4px;
     }
     &__before{
+        font-weight: 700;
         color: v.$Dark-grayish-blue;
         text-decoration: line-through;
     }
     &__button{
         @include mixins.button;
+    }
+    @media(min-width: 1115px){
+        width: 446px;
+        padding-top: 60px;
+        &__title{
+            font-size: 2.7em;
+            margin-bottom: 48px;
+        }
+        &__description{
+            font-size: 0.9em;
+            margin-bottom: 37px;
+        }
+        &__prices{
+            flex-direction: column;
+            align-items: flex-start; //direcciona la columna que contiene el items al inicio 
+        }
     }
 }

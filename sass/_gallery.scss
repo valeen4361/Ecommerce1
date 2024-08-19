@@ -1,13 +1,12 @@
-@use 'variables';
+@use 'variables' as v;
 @use 'mixins';
 
 .gallery{
     &__image-container{
-        //border: 2px solid blue;
         height: 300px;
         width: 100%;
         background-image: url(../images/image-product-1.jpg);
-        background-position-y:-35px ; //sube la posicion de la imagen
+        background-position-y:-35px ; //sube la posicion de la imagen/mobile
         background-size: cover;
         &:hover{
             cursor: pointer;
@@ -19,10 +18,31 @@
     &__next{
         @include mixins.image-btn(190px, 320px);
     }
-    &__thumnail{
+    &__thumnails{
         display: none;
         @media (min-width: 1115px) {
-            display: block;
+            display: flex; //un elemento al lado del otro
+            justify-content: space-between;
         }
+    }
+    &__thumnail{
+        width: 90px;
+        border-radius: 16px;
+        &:hover{
+            cursor: pointer;
+            border: 2px solid v.$Orange;
+        }
+    }
+    @media (min-width: 1115px){
+        width: 446px;
+        &__image-container{
+            background-position-y: 0 ;
+            border-radius: 15px;
+            height: 446px;
+            margin-bottom: 32px;
+            
+
+        }
+        
     }
 }

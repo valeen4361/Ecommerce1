@@ -24,7 +24,7 @@
         cursor: pointer;
     }
     @media(min-width: 1115px){
-
+        display: none;
     }
 }
 @mixin changenumber($pv, $ph){
