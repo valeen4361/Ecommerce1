@@ -13,17 +13,10 @@
         }
     }
     &__previus{
-        @include mixins.image-btn(190px, 15px);//()creacion de parametros para las posiciones 
+        @include mixins.image-btn(170px, 15px, false);//()creacion de parametros para las posiciones 
     }
     &__next{
-        @include mixins.image-btn(190px, 320px);
-    }
-    &__thumnails{
-        display: none;
-        @media (min-width: 1115px) {
-            display: flex; //un elemento al lado del otro
-            justify-content: space-between;
-        }
+        @include mixins.image-btn(170px, 320px, false);
     }
     &__thumnail{
         width: 90px;
@@ -31,6 +24,13 @@
         &:hover{
             cursor: pointer;
             border: 2px solid v.$Orange;
+        }
+    }
+    &__thumnails{
+        display: none;
+        @media (min-width: 1115px) {
+            display: flex; //un elemento al lado del otro
+            justify-content: space-between;
         }
     }
     @media (min-width: 1115px){

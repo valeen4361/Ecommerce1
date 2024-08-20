@@ -8,10 +8,10 @@
 @use 'details';
 @use 'input';
 @use 'modal-cart';
+@use 'modal-gallery';
 
 .main-container{
     width: 375px;
-    border: 1px solid purple;
     margin: auto;
     position: relative;
     @media (min-width: 1115px){
