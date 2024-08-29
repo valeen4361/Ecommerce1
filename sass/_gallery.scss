@@ -18,6 +18,13 @@
     &__next{
         @include mixins.image-btn(170px, 320px, false);
     }
+    &__thumnails{
+        display: none;
+        @media (min-width: 1115px) {
+            display: flex; //un elemento al lado del otro
+            justify-content: space-between;
+        }
+    }
     &__thumnail{
         width: 90px;
         border-radius: 16px;
@@ -26,15 +33,9 @@
             border: 2px solid v.$Orange;
         }
     }
-    &__thumnails{
-        display: none;
-        @media (min-width: 1115px) {
-            display: flex; //un elemento al lado del otro
-            justify-content: space-between;
-        }
-    }
     @media (min-width: 1115px){
         width: 446px;
+        cursor: pointer;
         &__image-container{
             background-position-y: 0 ;
             border-radius: 15px;

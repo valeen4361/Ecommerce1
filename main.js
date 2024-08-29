@@ -81,8 +81,57 @@ previusGalleyBtn.addEventListener('click', ()=>{
 });
 
 //!Mostrar modal de img (desktop)
+const imagesModal = document.querySelector('.modal-gallery__background');
+const closeModalBtn = document.querySelector('.modal-gallery__close');
+
+imageContainer.addEventListener('click',() =>{
+    if(window.innerWidth >= 1115){
+        imagesModal.style.display = 'grid';
+    }
+
+});
+
+closeModalBtn.addEventListener('click', () => {
+    imagesModal.style.display = 'none';
+});
+
+//!Cambiar las imagenes thumnail (desktop)
+let thumbnails = document.querySelectorAll('.gallery__thumnail')
+thumbnails = [...thumbnails] //utilizando spread operator
+
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', event=>{
+        console.log(event.target.id)
+        imageContainer.style.backgroundImage = `url('../images/image-product-${event.target.id}.jpg')`
+    });
+});
+
+//!Cambiar las imagenes thumnails (Modal)
 
 
+let modalthumbnails = document.querySelectorAll('.modal-gallery__thumnail');
+const modalImageContainer = document.querySelector('.modal-gallery__image-container')
+modalthumbnails = [...modalthumbnails]
+
+modalthumbnails.forEach(modalthumbnail => {
+    modalthumbnail.addEventListener('click', event=>{
+        console.log(event.target.id.slice(-1))
+        modalImageContainer.style.backgroundImage = `url('../images/image-product-${event.target.id.slice(-1)}.jpg')`
+    });
+});
+
+//!Cambiar con las flechas las img desde el modal
+const nextModalBtn = document.querySelector('.modal-gallery__next');
+const previusModalBtn = document.querySelector('.modal-gallery__previus');
+
+nextModalBtn.addEventListener('click' , ()=>{
+    changeNextImage(modalImageContainer);
+});
+
+previusModalBtn.addEventListener('click' , ()=>{
+    changePreviusImage(modalImageContainer);
+
+});
 
 
 //!FUNSIONES (modal)

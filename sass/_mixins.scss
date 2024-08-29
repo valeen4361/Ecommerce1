@@ -9,6 +9,7 @@
     height: 100%;
     z-index: 1; //para poner la imagen hacia atras de las flechas (next,previus)
     display: none;
+    overflow: hidden;
 }
 
 @mixin image-btn($top, $left, $showdesk){ //variables para la posicion de las flechas

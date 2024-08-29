@@ -2,11 +2,10 @@
 @use 'mixins';
 
 .modal-gallery{
-    width: 446px;
+    width: 550px;
     &__background{
-        display: none;
         @include mixins.modal-background;
-        //display: grid;
+        display: none;
         place-content: center;
     }
     &__close-container{
@@ -35,13 +34,14 @@
         margin: auto;
     }
     &__thumnail{
-    width: 90px;
-    border-radius: 16px;
-        &:hover{
-        cursor: pointer;
-        border: 2px solid v.$Orange;
+        width: 90px;
+        border-radius: 16px;
+            &:hover{
+            cursor: pointer;
+            border: 2px solid v.$Orange;
+            }
         }
-    }
+    
     &__previus{
         @include mixins.image-btn(190px, -15px, true)
     }
