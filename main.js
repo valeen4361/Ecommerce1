@@ -30,19 +30,97 @@ addToCartBtn.addEventListener('click', ()=>{
 
     cartNotification.innerText = userInputNumber; //lastValue
     cartNotification.style.display = 'block'; //para mostrar cant del carrito...sass esta con display none
+    drawProductInModal();
+    priceModal.innerHTML = `$125 x${userInputNumber} <span>$${userInputNumber*125}.00</span>`;
+    
 });
 
-//!Click en el cart y se muestra modal
+//!Click en el cart y se muestra modal con detalle
 const cartIconBtn = document.querySelector('.header__cart');
 const cartModal = document.querySelector('.cart-modal');
 let priceModal = document.querySelector('.cart-modal__price');
+const productContainer = document.querySelector('.cart-modal__chekout-container');
+
 
 cartIconBtn.addEventListener('click' ,() =>{
    // cartModal.style.display = 'block'; //muestra el modal al hacer click...sass esta en display none
-
-   cartModal.classList.toggle('show');
+   cartModal.classList.toggle('show'); //clase show recordar que esta en style.scss
    priceModal.innerHTML = `$125 x${userInputNumber} <span>$${userInputNumber*125}.00</span>`;
+
+   if(lastValue == 0){
+    productContainer.innerHTML = '<p class="cart-empty" >Your cart is empty</p>';
+   }else{
+    drawProductInModal();
+   }
 });
 
 //!Borrar cant de porductos de cart modal
-const deleteProductBtn = document.querySelector('.cart-modal__delete');
+function deleteProduct(){
+    const deleteProductBtn = document.querySelector('.cart-modal__delete');
+
+deleteProductBtn.addEventListener('click', ()=>{
+    productContainer.innerHTML = '<p class="cart-empty" >Your cart is empty</p>';
+    lastValue = 0;
+    cartNotification.innerText = lastValue;
+});
+
+}
+
+//!Cambiar imagenes cuando se presiona botones flecha
+const imageContainer = document.querySelector('.gallery__image-container');
+const nextGalleryBtn = document.querySelector('.gallery__next');
+const previusGalleyBtn = document.querySelector('.gallery__previus');
+let imgIndex = 1;
+
+nextGalleryBtn.addEventListener('click', () =>{
+    changeNextImage(imageContainer);
+})
+
+previusGalleyBtn.addEventListener('click', ()=>{
+    changePreviusImage(imageContainer);
+});
+
+//!Mostrar modal de img (desktop)
+
+
+
+
+//!FUNSIONES (modal)
+function drawProductInModal(){
+    productContainer.innerHTML = `<div class="cart-modal__details-container">
+          <img class="cart-modal__image" src="./images/image-product-1-thumbnail.jpg" alt="icono modal thumnail 1">
+          <div>
+            <p class="cart-modal__product">Autum Limited Edition</p>
+            <p class="cart-modal__price">$125 x3 <span>$375.00</span></p>
+          </div>
+          <img class="cart-modal__delete" src="./images/icon-delete.svg" alt="delete">
+        </div>
+    <button class="cart-modal__chekout">Checkout</button>`
+    deleteProduct();
+    let priceModal = document.querySelector('.cart-modal__price');
+    priceModal.innerHTML = `$125 x${userInputNumber} <span>$${userInputNumber*125}.00</span>`;
+    
+};
+
+//!BTN CAMBIAR IMG
+function changeNextImage(imgContainer){
+    if(imgIndex === 4){
+        imgIndex = 1;
+    }else{
+        imgIndex++;
+    }
+    imageContainer.style.backgroundImage = `url('../images/image-product-${imgIndex}.jpg')`;
+}
+
+function changePreviusImage(imageContainer){
+    if(imgIndex === 1){
+        imgIndex = 4;
+    }else{
+        imgIndex--;
+    }
+    imageContainer.style.backgroundImage = `url('../images/image-product-${imgIndex}.jpg')`;
+
+}
+
+
+
